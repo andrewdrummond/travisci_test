@@ -5,5 +5,5 @@ use Test::More qw( no_plan ); # for the is() and isnt() functions
 
 do 'calc.pl';
 
-is(add(3, 4), 7);
-is(add(0, 1), 1);
+is(Exile::Calc::add(3, 4), 7);
+is(Exile::Calc::add(0, 1), 1);
