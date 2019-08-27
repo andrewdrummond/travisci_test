@@ -10,8 +10,8 @@ before_script:
   - cpanm --quiet --notest --skip-satisfied Devel::Cover::Report::Codecov
 
 script:
-  - perl Build.PL
-  - ./Build build
+  - perl Makefile.PL
+  - make test
   - cover -test
 
 after_success:
