@@ -5,3 +5,14 @@ perl:
 branches:
   exclude:
   - /^dev-.*$/
+
+before_script:
+  - cpanm --quiet --notest --skip-satisfied Devel::Cover::Report::Codecov
+
+script:
+  - perl Makefile.PL
+  - make test
+  - cover -test
+
+after_success:
+  - cover -report codecov
